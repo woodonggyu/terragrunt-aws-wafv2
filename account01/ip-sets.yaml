@@ -1,0 +1,16 @@
+policies:
+  - name: t1
+    description: t1
+    scope: REGIONAL
+    ip_address_version: IPV4
+    addresses: ["1.1.1.1/32"]
+    tags:
+      Service: "Security"
+
+  - name: t2
+    description: t2
+    scope: REGIONAL
+    ip_address_version: IPV4
+    addresses: ["2.2.2.2/32", "3.3.3.3/32"]
+    tags:
+      Service: "Security"

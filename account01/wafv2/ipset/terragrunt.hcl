@@ -16,8 +16,8 @@ generate "provider" {
   if_exists = "overwrite_terragrunt"
   contents  = <<EOF
 provider "aws" {
-  region  = "${local.account_vars.region}"
-  profile = "${local.account_vars.profile}"
+  region  = "${local.account_vars.aws_region}"
+  profile = "${local.account_vars.aws_profile}"
 }
 EOF
 }

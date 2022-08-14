@@ -1,13 +1,25 @@
-include "root" {
-  path = find_in_parent_folders()
-}
-
 terraform {
   source = "../../../modules//ipset"
 }
 
+include "root" {
+  path = find_in_parent_folders()
+}
+
 locals {
-  env_vars = yamldecode(file(find_in_parent_folders("ip-sets.yaml")))
+  env_vars     = yamldecode(file(find_in_parent_folders("ip-sets.yaml")))
+  account_vars = yamldecode(file(find_in_parent_folders("account.yaml")))
+}
+
+generate "provider" {
+  path      = "versions.tf"
+  if_exists = "overwrite_terragrunt"
+  contents  = <<EOF
+provider "aws" {
+  region  = "${local.account_vars.region}"
+  profile = "${local.account_vars.profile}"
+}
+EOF
 }
 
 inputs = {

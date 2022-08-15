@@ -1,6 +1,6 @@
-policies:
+policy:
   - name: t1
-    description: t1
+    description: test1 (GLOBAL)
     scope: REGIONAL
     ip_address_version: IPV4
     addresses: ["1.1.1.1/32"]
@@ -8,7 +8,7 @@ policies:
       Service: "Security"
 
   - name: t2
-    description: t2
+    description: test2 (LOCAL)
     scope: REGIONAL
     ip_address_version: IPV4
     addresses: ["2.2.2.2/32", "3.3.3.3/32"]

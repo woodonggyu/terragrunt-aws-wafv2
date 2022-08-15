@@ -3,12 +3,12 @@ terraform {
 }
 
 include "root" {
-  path = find_in_parent_folders()
+  path = find_in_parent_folders("root.hcl")
 }
 
 locals {
-  env_vars     = yamldecode(file(find_in_parent_folders("ip-sets.yaml")))
   account_vars = yamldecode(file(find_in_parent_folders("account.yaml")))
+  config_vars  = yamldecode(file("config.yaml"))
 }
 
 generate "provider" {
@@ -25,11 +25,11 @@ EOF
 inputs = {
   policies = local.env_vars.policies
 
-  name               = local.env_vars.policies[*].name
-  description        = local.env_vars.policies[*].description
-  scope              = local.env_vars.policies[*].scope
-  ip_address_version = local.env_vars.policies[*].ip_address_version
-  addresses          = local.env_vars.policies[*].addresses
+  name               = local.config_vars.policy[*].name
+  description        = local.config_vars.policy[*].description
+  scope              = local.config_vars.policy[*].scope
+  ip_address_version = local.config_vars.policy[*].ip_address_version
+  addresses          = local.config_vars.policy[*].addresses
 
   tags = local.env_vars.policies[*].tags
 }

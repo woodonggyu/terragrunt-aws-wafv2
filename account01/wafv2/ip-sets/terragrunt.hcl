@@ -23,7 +23,7 @@ EOF
 }
 
 inputs = {
-  policies = local.env_vars.policies
+  policies = local.config_vars.policy
 
   name               = local.config_vars.policy[*].name
   description        = local.config_vars.policy[*].description
@@ -31,5 +31,5 @@ inputs = {
   ip_address_version = local.config_vars.policy[*].ip_address_version
   addresses          = local.config_vars.policy[*].addresses
 
-  tags = local.env_vars.policies[*].tags
+  tags = local.config_vars.policy[*].tags
 }

@@ -34,8 +34,6 @@ repos:
   # If false (default), the source branch won't be deleted on merge
   delete_source_branch_on_merge: true
 
-  # id can also be an exact match.
-- id: https://github.com/woodonggyu/terragrunt-aws-wafv2
 
 workflows:
   terragrunt:

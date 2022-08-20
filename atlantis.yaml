@@ -2,6 +2,9 @@ version: 3
 projects:
   - name: test
     dir: account01/wafv2/ip-sets
+    autoplan:
+      when_modified: [config.yaml]
+      enable: true
     workflow: terragrunt
 
 workflows:

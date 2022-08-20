@@ -1,4 +1,3 @@
-# repos lists the config for specific repos.
 repos:
   # id can either be an exact repo ID or a regex.
   # If using a regex, it must start and end with a slash.

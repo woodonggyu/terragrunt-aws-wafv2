@@ -3,12 +3,3 @@ projects:
   - name: test
     dir: account01/wafv2/ip-sets
     workflow: terragrunt
-
-workflows:
-  terragrunt:
-    plan:
-      steps:
-        - run: terragrunt plan
-    apply:
-      steps:
-        - run: terragrunt apply

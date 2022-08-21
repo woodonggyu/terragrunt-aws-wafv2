@@ -20,3 +20,12 @@ repos:
   # workflows. If false (default), the repo can only use server-side defined
   # workflows.
   allow_custom_workflows: true
+
+workflows:
+  terragrunt:
+    plan:
+      steps:
+        - run: terragrunt plan
+    apply:
+      steps:
+        - run: terragrunt apply

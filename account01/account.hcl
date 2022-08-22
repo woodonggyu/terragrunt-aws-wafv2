@@ -1,6 +1,6 @@
 locals {
   aws_region  = "ap-northeast-2"
-  aws_profile = "test"
+  aws_account_id = "test"
 }
 
 generate "provider" {
@@ -9,7 +9,9 @@ generate "provider" {
   contents  = <<EOF
 provider "aws" {
   region  = "${local.aws_region}"
-  profile = "${local.aws_profile}"
+  assume_role {
+    role_arn = "arn:aws:iam::${local.aws_account_id}:role/[role_name]"
+  }
 }
 EOF
 }

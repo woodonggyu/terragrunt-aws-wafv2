@@ -25,7 +25,7 @@ workflows:
   terragrunt:
     plan:
       steps:
-        - run: terragrunt plan -out $PLANFILE
+        - run: terragrunt plan
     apply:
       steps:
-        - run: terragrunt apply $PLANFILE
+        - run: terragrunt apply -auto-approve

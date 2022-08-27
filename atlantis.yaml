@@ -3,3 +3,4 @@ projects:
   - name: test
     dir: account01/wafv2/ip-sets
     workflow: terragrunt
+    terraform_version: 1.2.4

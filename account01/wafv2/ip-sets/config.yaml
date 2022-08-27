@@ -14,3 +14,11 @@ policy:
     addresses: ["2.2.2.2/32", "3.3.3.3/32"]
     tags:
       Service: "Security"
+
+  - name: t3
+    description: LOCAL - TEST3
+    scope: REGIONAL
+    ip_address_version: IPV4
+    addresses: ["4.4.4.4/32"]
+    tags:
+      Service: "Security"

@@ -1,6 +1,6 @@
 locals {
   aws_region  = "ap-northeast-2"
-  aws_account_id = "test"
+  aws_account_id = "362252864672"
 }
 
 generate "provider" {
@@ -10,7 +10,7 @@ generate "provider" {
 provider "aws" {
   region  = "${local.aws_region}"
   assume_role {
-    role_arn = "arn:aws:iam::${local.aws_account_id}:role/[role_name]"
+    role_arn = "arn:aws:iam::${local.aws_account_id}:role/TERRAFORM-WAF"
   }
 }
 EOF

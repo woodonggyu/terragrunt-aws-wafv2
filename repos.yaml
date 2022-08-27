@@ -25,7 +25,7 @@ workflows:
   terragrunt:
     plan:
       steps:
-        - run: terragrunt plan
+        - run: terragrunt plan -no-color -out=deploy.tfplan
     apply:
       steps:
-        - run: terragrunt apply -auto-approve
+        - run: terragrunt apply -no-color deploy.tfplan

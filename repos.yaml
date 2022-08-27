@@ -25,7 +25,7 @@ workflows:
   terragrunt:
     plan:
       steps:
-        - run: terragrunt plan
+        - run: terragrunt plan -out $PLANFILE
     apply:
       steps:
-        - run: terragrunt apply
+        - run: terragrunt apply $PLANFILE
